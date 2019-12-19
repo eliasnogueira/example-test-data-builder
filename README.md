@@ -15,10 +15,8 @@ in your test and, at the end, the recommendation using the Test Data Builder.
 
 #### model/plain
 The `UserRegistration` class is a plain object with _getters_ and _setters_, _constructor_ and _toString()_.
-This class is being used on [PlainClassTest](#plain).
 
 The `UserRegistrationBuilder` is the Builder pattern applied using the `UserRegistration` class to make easier the object creation.
-This class is being used on [PlainClassUsingBuilderTest](#plain).
 
 :warning: This approach is not recommended but if your not used to create Java classes, this might be helpful.
 
@@ -43,7 +41,7 @@ Even though you use the same method twice in your test, the data will be differe
 ### src/test
 
 #### plain
-The class [PlainClassTest](src/main/test/java/com/eliasogueira/example/plain/PlainClassTest.java) 
+The class [PlainClassTest](/src/main/test/java/com/eliasogueira/example/plain/PlainClassTest.java) 
 shows how is the process to create a test with data to use in your test **in the regular way**.
 
 The class [PlainClassUsingBuilderTest](src/main/test/java/com/eliasogueira/example/plain/PlainClassUsingBuilderTest.java) 
