@@ -51,8 +51,7 @@ The class `UsingLombokBuilderTest` shows the same approach of the previous one, 
 #### data
 The class `UsingFixedDataTest` shows how is the process to **create a test with the Test Data Builder having fixed data**.
 
-This class is being used on [UsingDynamicDataTest](src/main/test/java/com/eliasogueira/example/data/UsingDynamicDataTest.java) 
-to show how is the process to **create a test with the Test Data Builder having dynamic data**.
+This class is being used on `UsingDynamicDataTest` to show how is the process to **create a test with the Test Data Builder having dynamic data**.
 
 ### resources
 Log4J2 properties files used to show the log information in the console.
