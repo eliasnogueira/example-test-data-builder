@@ -18,14 +18,14 @@ The `UserRegistration` class is a plain object with _getters_ and _setters_, _co
 
 The `UserRegistrationBuilder` is the Builder pattern applied using the `UserRegistration` class to make easier the object creation.
 
-:warning: This approach is not recommended but if your not used to create Java classes, this might be helpful.
+> :warning: This approach is not recommended but if your not used to create Java classes, this might be helpful.
 
 #### model/lombok
 To avoid you to write get, setters, toString and builders you can use Lombok.
 On the `UserRegistration` class you can see the `@Data` and `Builder` that, respectively, automatically create the get 
 and setters, and the builder.
 
-:warning: This approach is not recommended. The only difference between this and the plain approach is that now we are 
+> :warning: This approach is not recommended. The only difference between this and the plain approach is that now we are 
 using less code.
 
 ### data
@@ -41,7 +41,7 @@ Even though you use the same method twice in your test, the data will be differe
 ### src/test
 
 #### plain
-The class [PlainClassTest](/src/main/test/java/com/eliasogueira/example/plain/PlainClassTest.java) 
+The class [PlainClassTest](tree/master/src/main/test/java/com/eliasogueira/example/plain/PlainClassTest.java) 
 shows how is the process to create a test with data to use in your test **in the regular way**.
 
 The class [PlainClassUsingBuilderTest](src/main/test/java/com/eliasogueira/example/plain/PlainClassUsingBuilderTest.java) 
