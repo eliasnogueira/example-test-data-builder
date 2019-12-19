@@ -41,23 +41,18 @@ Even though you use the same method twice in your test, the data will be differe
 ### src/test
 
 #### plain
-The class [PlainClassTest](tree/master/src/main/test/java/com/eliasogueira/example/plain/PlainClassTest.java) 
-shows how is the process to create a test with data to use in your test **in the regular way**.
+The class `PlainClassTest` shows how is the process to create a test with data to use in your test **in the regular way**.
 
-The class [PlainClassUsingBuilderTest](src/main/test/java/com/eliasogueira/example/plain/PlainClassUsingBuilderTest.java) 
-shows how is the process to create a test with **data using a builder**.
+The class `PlainClassUsingBuilderTest` shows how is the process to create a test with **data using a builder**.
 
 #### lombok
-The class [UsingLombokBuilderTest](src/main/test/java/com/eliasogueira/example/lombok/UsingLombokBuilderTest.java) shows 
-the same approach of the previous one, but using lombok with builder in order to have less code.
+The class `UsingLombokBuilderTest` shows the same approach of the previous one, but using lombok with builder in order to have less code.
 
 #### data
-The class [UsingFixedDataTest](src/main/test/java/com/eliasogueira/example/data/UsingFixedDataTest.java) shows how is the 
-process to **create a test with the Test Data Builder having fixed data**.
+The class `UsingFixedDataTest` shows how is the process to **create a test with the Test Data Builder having fixed data**.
 
 This class is being used on [UsingDynamicDataTest](src/main/test/java/com/eliasogueira/example/data/UsingDynamicDataTest.java) 
 to show how is the process to **create a test with the Test Data Builder having dynamic data**.
-
 
 ### resources
 Log4J2 properties files used to show the log information in the console.
