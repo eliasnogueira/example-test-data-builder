@@ -48,7 +48,7 @@ public class PlainClassUsingBuilderTest {
             name("Robert Spencer").
             email("rob.spencer@gmail.com").
             password("4r3e2w1qW").
-            dateOfBirth(LocalDate.of(1980, 3, 21)).
+            dateOfBirth(LocalDate.of(year, month, day)).
             build();
 
         LOG.info(userRegistration);
