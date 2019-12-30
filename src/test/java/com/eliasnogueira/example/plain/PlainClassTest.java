@@ -30,6 +30,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class PlainClassTest {
 
     private static final Logger LOG = LogManager.getLogger(PlainClassTest.class);
@@ -37,19 +39,24 @@ public class PlainClassTest {
     @Test
     @DisplayName("Test Data with plain class")
     public void plainClass() {
+        int year = 1982;
+        int month = 8;
+        int day = 15;
 
         // Using setters
         UserRegistration userRegistration = new UserRegistration();
         userRegistration.setName("Elias Nogueira");
         userRegistration.setEmail("elias@gmail.com");
         userRegistration.setPassword("1q2w3e4R");
-        userRegistration.setDateOfBirth(LocalDate.of(1982, 8, 15));
+        userRegistration.setDateOfBirth(LocalDate.of(year, month, day));
         LOG.info(userRegistration);
 
         // Using class constructor (not recommended)
         UserRegistration otherUserRegistration = new UserRegistration(
             "Eva de Vries", "evadevries@gmail.com", "eV@devr1es", LocalDate.of(1997, 11, 5));
         LOG.info(otherUserRegistration);
+
+        assertNotNull(userRegistration);
     }
 
 }
