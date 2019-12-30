@@ -39,11 +39,15 @@ public class UsingLombokBuilderTest {
     @Test
     @DisplayName("Test Data Using Lombok")
     public void plainClassWithBuilder() {
+        int year = 2001;
+        int month = 5;
+        int day = 10;
+
         UserRegistration userRegistration = UserRegistration.builder().
             name("John Snow").
             email("john.snow@gmail.com").
             password("j0hNSn0w3").
-            dateOfBirth(LocalDate.of(2001, 5, 10)).
+            dateOfBirth(LocalDate.of(year, month, day)).
             build();
 
         LOG.info(userRegistration);
