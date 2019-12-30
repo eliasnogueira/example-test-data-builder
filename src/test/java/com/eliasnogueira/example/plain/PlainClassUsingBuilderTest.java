@@ -31,6 +31,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class PlainClassUsingBuilderTest {
 
     private static final Logger LOG = LogManager.getLogger(PlainClassUsingBuilderTest.class);
@@ -38,6 +40,10 @@ public class PlainClassUsingBuilderTest {
     @Test
     @DisplayName("Test Data with builder in the plain class")
     public void plainClassWithBuilder() {
+        int year = 1980;
+        int month = 3;
+        int day = 21;
+
         UserRegistration userRegistration = new UserRegistrationBuilder().
             name("Robert Spencer").
             email("rob.spencer@gmail.com").
@@ -46,5 +52,7 @@ public class PlainClassUsingBuilderTest {
             build();
 
         LOG.info(userRegistration);
+
+        assertNotNull(userRegistration);
     }
 }
