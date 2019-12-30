@@ -30,7 +30,9 @@ import org.apache.logging.log4j.Logger;
 
 public class UserRegistrationFixedData {
 
-    private static final Logger LOG = LogManager.getLogger(UserRegistrationData.class);
+    private static final Logger LOG = LogManager.getLogger(UserRegistrationFixedData.class);
+
+    private UserRegistrationFixedData() {}
 
     public static UserRegistration createUser() {
         UserRegistration userRegistration = UserRegistration.builder().
