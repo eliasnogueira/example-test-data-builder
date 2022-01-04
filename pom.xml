@@ -30,7 +30,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.jupiter.version>5.5.2</junit.jupiter.version>
-    <log4j.core.version>2.13.2</log4j.core.version>
+    <log4j.core.version>2.17.1</log4j.core.version>
     <lombok.version>1.18.10</lombok.version>
   </properties>
 
