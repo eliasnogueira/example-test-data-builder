@@ -3,7 +3,7 @@
 ## Environment
 
  * Maven
- * Java JDK 11+
+ * Java JDK 21+
  * Lombok plugin
  * Enable _Annotation Processing_
  

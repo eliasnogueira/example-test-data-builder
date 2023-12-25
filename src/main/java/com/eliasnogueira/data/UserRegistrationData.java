@@ -24,34 +24,36 @@
 package com.eliasnogueira.data;
 
 import com.eliasnogueira.model.lombok.UserRegistration;
-import com.github.javafaker.Faker;
+import net.datafaker.Faker;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class UserRegistrationData {
 
     private static final Logger LOG = LogManager.getLogger(UserRegistrationData.class);
-    private static Faker faker = new Faker();
-    private static int PASSWORD_MINIMUM_LENGTH = 8;
-    private static int PASSWORD_MAXIMUM_LENGTH = 16;
-    private static boolean includeUppercase = true;
-    private static boolean includeSpecial = true;
-    private static boolean includeDigit = true;
+    private static final Faker faker = new Faker();
+    private static final int PASSWORD_MINIMUM_LENGTH = 8;
+    private static final int PASSWORD_MAXIMUM_LENGTH = 16;
+    private static final boolean includeUppercase = true;
+    private static final boolean includeSpecial = true;
+    private static final boolean includeDigit = true;
 
-    private UserRegistrationData() {}
+    private UserRegistrationData() {
+    }
 
     public static UserRegistration createUser() {
         UserRegistration userRegistration = UserRegistration.builder().
-            name(faker.name().fullName()).
-            email(faker.internet().emailAddress()).
-            password(faker.internet().password(
-                PASSWORD_MINIMUM_LENGTH, PASSWORD_MAXIMUM_LENGTH, includeUppercase, includeSpecial, includeDigit)).
-            dateOfBirth(convertDateToLocalDate(faker.date().birthday()))
-            .build();
+                name(faker.name().fullName()).
+                email(faker.internet().emailAddress()).
+                password(faker.internet().password(
+                        PASSWORD_MINIMUM_LENGTH, PASSWORD_MAXIMUM_LENGTH, includeUppercase, includeSpecial, includeDigit)).
+                dateOfBirth(convertDateToLocalDate(faker.date().birthday()))
+                .build();
 
         LOG.info(userRegistration);
 
@@ -63,11 +65,11 @@ public class UserRegistrationData {
         int maximumPasswordLength = 7;
 
         UserRegistration userRegistration = UserRegistration.builder().
-            name(faker.name().fullName()).
-            email(faker.internet().emailAddress()).
-            password(faker.internet().password(minimumPasswordLength, maximumPasswordLength)).
-            dateOfBirth(convertDateToLocalDate(faker.date().birthday()))
-            .build();
+                name(faker.name().fullName()).
+                email(faker.internet().emailAddress()).
+                password(faker.internet().password(minimumPasswordLength, maximumPasswordLength)).
+                dateOfBirth(convertDateToLocalDate(faker.date().birthday()))
+                .build();
 
         LOG.info(userRegistration);
 
@@ -76,12 +78,12 @@ public class UserRegistrationData {
 
     public static UserRegistration createUserWithNotValidEmail() {
         UserRegistration userRegistration = UserRegistration.builder().
-            name(faker.name().fullName()).
-            email(faker.name().username()).
-            password(faker.internet().password(
-                PASSWORD_MINIMUM_LENGTH, PASSWORD_MAXIMUM_LENGTH, includeUppercase, includeSpecial, includeDigit)).
-            dateOfBirth(convertDateToLocalDate(faker.date().birthday()))
-            .build();
+                name(faker.name().fullName()).
+                email(faker.internet().username()).
+                password(faker.internet().password(
+                        PASSWORD_MINIMUM_LENGTH, PASSWORD_MAXIMUM_LENGTH, includeUppercase, includeSpecial, includeDigit)).
+                dateOfBirth(convertDateToLocalDate(faker.date().birthday()))
+                .build();
 
         LOG.info(userRegistration);
         return userRegistration;
@@ -89,12 +91,12 @@ public class UserRegistrationData {
 
     public static UserRegistration createUserNotValidDateOfBirth() {
         UserRegistration userRegistration = UserRegistration.builder().
-            name(faker.name().fullName()).
-            email(faker.internet().emailAddress()).
-            password(faker.internet().password(
-                PASSWORD_MINIMUM_LENGTH, PASSWORD_MAXIMUM_LENGTH, includeUppercase, includeSpecial, includeDigit)).
-            dateOfBirth(convertDateToLocalDate(faker.date().future(60, TimeUnit.DAYS)))
-            .build();
+                name(faker.name().fullName()).
+                email(faker.internet().emailAddress()).
+                password(faker.internet().password(
+                        PASSWORD_MINIMUM_LENGTH, PASSWORD_MAXIMUM_LENGTH, includeUppercase, includeSpecial, includeDigit)).
+                dateOfBirth(convertDateToLocalDate(faker.date().future(60, TimeUnit.DAYS)))
+                .build();
 
         LOG.info(userRegistration);
 

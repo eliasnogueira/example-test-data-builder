@@ -24,23 +24,25 @@
 package com.eliasnogueira.data;
 
 import com.eliasnogueira.model.lombok.UserRegistration;
-import java.time.LocalDate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.time.LocalDate;
 
 public class UserRegistrationFixedData {
 
     private static final Logger LOG = LogManager.getLogger(UserRegistrationFixedData.class);
 
-    private UserRegistrationFixedData() {}
+    private UserRegistrationFixedData() {
+    }
 
     public static UserRegistration createUser() {
         UserRegistration userRegistration = UserRegistration.builder().
-            name("Test user").
-            email("test@gmail.com").
-            password("12345678").
-            dateOfBirth(LocalDate.of(2001, 7, 18))
-            .build();
+                name("Test user").
+                email("test@gmail.com").
+                password("12345678").
+                dateOfBirth(LocalDate.of(2001, 7, 18))
+                .build();
 
         LOG.info(userRegistration);
 
@@ -49,11 +51,11 @@ public class UserRegistrationFixedData {
 
     public static UserRegistration createUserWithNotValidPassword() {
         UserRegistration userRegistration = UserRegistration.builder().
-            name("Test user - not valid password").
-            email("notValidPassword@gmail.com").
-            password("12345678").
-            dateOfBirth(LocalDate.of(1996, 12, 2))
-            .build();
+                name("Test user - not valid password").
+                email("notValidPassword@gmail.com").
+                password("12345678").
+                dateOfBirth(LocalDate.of(1996, 12, 2))
+                .build();
 
         LOG.info(userRegistration);
 
@@ -62,11 +64,11 @@ public class UserRegistrationFixedData {
 
     public static UserRegistration createUserWithNotValidEmail() {
         UserRegistration userRegistration = UserRegistration.builder().
-            name("Test user - not valid email").
-            email("emailNotValid").
-            password("1q2w3e4rT").
-            dateOfBirth(LocalDate.of(1989, 10, 21))
-            .build();
+                name("Test user - not valid email").
+                email("emailNotValid").
+                password("1q2w3e4rT").
+                dateOfBirth(LocalDate.of(1989, 10, 21))
+                .build();
 
         LOG.info(userRegistration);
 
@@ -75,11 +77,11 @@ public class UserRegistrationFixedData {
 
     public static UserRegistration createUserNotValidDateOfBirth() {
         UserRegistration userRegistration = UserRegistration.builder().
-            name("Test user - not valid birth date").
-            email("notValidBirthDate@gmail.com").
-            password("4r3e2w1qQ").
-            dateOfBirth(LocalDate.of(2030, 12, 31))
-            .build();
+                name("Test user - not valid birth date").
+                email("notValidBirthDate@gmail.com").
+                password("4r3e2w1qQ").
+                dateOfBirth(LocalDate.of(2030, 12, 31))
+                .build();
 
         LOG.info(userRegistration);
 
