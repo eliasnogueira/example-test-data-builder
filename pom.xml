@@ -35,7 +35,7 @@
         <maven-failsafe-plugin>3.2.3</maven-failsafe-plugin>
 
         <junit.jupiter.version>5.10.1</junit.jupiter.version>
-        <log4j.core.version>2.22.0</log4j.core.version>
+        <log4j.core.version>2.25.3</log4j.core.version>
         <lombok.version>1.18.30</lombok.version>
         <datafaker.version>2.0.2</datafaker.version>
     </properties>
